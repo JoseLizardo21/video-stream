@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video</title>
+    <style>
+        #local{
+            float: left;
+            margin: 5px;
+            padding: 5px;
+            border: 1px solid #000000;
+        }
+    </style>
+</head>
+<body>
+    <section id="local">
+        <video id="localmedio" width="150" height="150"></video>
+        <br>
+        <button id="botonllamar">LLAMAR</button>
+    </section>    
+    <section id="remoto">
+        <video id="remotomedio" width="500" height="500"></video>
+    </section>
+    <script src="/socket.io/socket.io.min.js"></script>
+    <script src="emisor.js"></script>
+</body>
+</html>
