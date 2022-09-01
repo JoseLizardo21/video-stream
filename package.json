@@ -12,7 +12,8 @@
     "nodemon": "^2.0.19"
   },
   "scripts": {
-    "dev": "nodemon ./src"
+    "dev": "nodemon ./src",
+    "start": "node ./src/index.js"
   },
   "keywords": [],
   "author": "",
