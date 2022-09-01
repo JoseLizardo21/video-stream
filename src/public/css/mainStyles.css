@@ -1,0 +1,6 @@
+.create-room, .join-room{
+    position: absolute;
+    z-index: 2000;
+    margin-top: 0;
+    background-color: rgba(14, 13, 13, 0.608);
+}

@@ -1,0 +1,10 @@
+$color1: rgb(68, 0, 113);
+$color2:rgb(181, 181, 181);
+.cont-pri{
+    height: 100vh;
+}
+@import "../public/lib/boostrap/scss/bootstrap.scss";
+.btn-1{
+    background-color: $color1;
+    color: $color2;
+}

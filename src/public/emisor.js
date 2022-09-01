@@ -1,6 +1,9 @@
-let usuario;
-const socket = io();
+let usuario, sala;
 function iniciar(){
+    const url = window.location.search;
+    const urlparams = new URLSearchParams(url);
+    sala = urlparams.get("name-room");
+    socket.emit('sala', sala);
     let botonllamar = document.getElementById('botonllamar');
     //botonllamar.addEventListener('click', negociar);
     socket.on('message', recibido);
@@ -38,10 +41,10 @@ function negociar(){
 }
 function enviar(msg){
     const msgJSON = JSON.stringify(msg);
-    socket.emit('message', msgJSON);
+    socket.emit('message', {msgJSON, sala});
 }
 function recibido(e){
-    const msg = JSON.parse(e.msg);
+    const msg = JSON.parse(e);
     if(msg.type == "video-answer"){
         usuario.setRemoteDescription(new RTCSessionDescription(msg.sdp));
         return;

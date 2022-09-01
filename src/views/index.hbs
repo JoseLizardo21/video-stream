@@ -1,0 +1,53 @@
+<div class="container-fluid cont-pri position-absolute">
+    <div class="row justify-content-center align-items-center vh-100">
+        <div class="bg-white col-10 col-md-6 card shadow-lg p-0" id="pop-up1">
+            <div class="card-body">
+                <img src="/imgs/img-conferencia.jpg" class="card-img-top" alt="Imagen de conferencia">
+                <h2 class="card-title text-center">Bienvenidos a Pliss</h2>
+                <div class="row gx-4 p-4">
+                    <div class="col">
+                        <button class="btn btn-primary w-100 shadow-lg" id="btn-room">CREAR SALA</button>
+                    </div>
+                    <div class="col">
+                        <button class="btn btn-success w-100 shadow-lg" id="btn-join-room">UNIRME A SALA</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container-fluid cont-pri invisible create-room" id="create-room">
+ <div class="row justify-content-center align-items-center vh-100">
+        <div class="bg-white col-10 col-md-4 card shadow-lg" id="window2">
+            <div class="row justify-content-end">
+                <button type="button" class="btn-close btn-close-pop-up" aria-label="Close"></button>
+            </div>
+            <div class="card-body pt-1">
+                <form action="/create-room" method="POST">
+                    <input type="text" name="name-room" class="form-control" placeholder="Nombre de la sala" id="roomName">
+                    <div class="row">
+                        <button class="btn btn-success mt-4 w-50 mx-auto" id="btnNewRoom">Crear</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container-fluid cont-pri invisible join-room" id="join-room">
+ <div class="row justify-content-center align-items-center vh-100">
+        <div class="bg-white col-10 col-md-4 card shadow-lg">
+            <div class="row justify-content-end">
+                <button type="button" class="btn-close btn-close-pop-up" aria-label="Close"></button>
+            </div>
+            <div class="card-body pt-1">
+                <form action="/join" method="POST">
+                    <input type="text" name="name-room" class="form-control" placeholder="Nombre de la sala">
+                    <div class="row">
+                        <button class="btn btn-success mt-4 w-50 mx-auto">Unirme</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="scripts/mainScript.js"></script>
