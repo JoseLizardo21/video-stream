@@ -1,24 +1,14 @@
-
-    <style>
-        #local{
-            float: left;
-            margin: 5px;
-            padding: 5px;
-            border: 1px solid #000000;
-        }
-    </style>
-<div>
-    <section id="local">
-        <video id="localmedio" width="150" height="150"></video>
-        <br>
-        <button id="botonllamar">LLAMAR</button>
-    </section>    
-    <section id="remoto">
-        <video id="remotomedio" width="500" height="500"></video>
-    </section>
-    <p id="sala">
-        {{room_name}}
-    </p>
+<div class="container-fluid cont-pri">
+    <div class="row justify-content-center align-items-center vh-100 bg-dark">
+        <div class="col-4">
+            <video id="localmedio" class="w-100 rounded"></video>
+            <p class="text-white text-center" id="user1"></p>
+        </div>
+        <div class="col-4">
+            <video id="remotomedio" class="w-100 rounded"></video>
+            <p class="text-white text-center" id="user2"></p>
+        </div>
+    </div>
 </div>
 <script src="/emisor.js"></script>    
 

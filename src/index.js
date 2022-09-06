@@ -15,6 +15,7 @@ io.on('connection', (socket)=>{
         socket.join(sala);
         socket.on('message', (msg)=>{
             socket.join(msg.sala);
+            socket.to(msg.sala).emit('user', msg.user);
             socket.to(msg.sala).emit('message', msg.msgJSON);
         });
     })

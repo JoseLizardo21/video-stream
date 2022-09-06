@@ -1,11 +1,10 @@
 let usuario, sala;
+let user = location.href.split('/');
 function iniciar(){
-    const url = window.location.search;
-    const urlparams = new URLSearchParams(url);
-    sala = urlparams.get("name-room");
+    user = decodeURIComponent(user[5]);
+    const user1 = document.getElementById('user1');
+    user1.innerHTML = 'Yo';
     socket.emit('sala', sala);
-    let botonllamar = document.getElementById('botonllamar');
-    //botonllamar.addEventListener('click', negociar);
     socket.on('message', recibido);
     let promesa = navigator.mediaDevices.getUserMedia({video: true});
     promesa.then(prepararcamara);
@@ -41,7 +40,7 @@ function negociar(){
 }
 function enviar(msg){
     const msgJSON = JSON.stringify(msg);
-    socket.emit('message', {msgJSON, sala});
+    socket.emit('message', {msgJSON, sala, user});
 }
 function recibido(e){
     const msg = JSON.parse(e);
@@ -82,6 +81,10 @@ function prepararcandidato(e){
 }
 function prepararremoto(e){
     const video = document.getElementById('remotomedio');
+    const user2 = document.getElementById('user2');
+    socket.on('user', (user)=>{
+        user2.innerHTML = user;
+    });
     video.srcObject = e.stream;
     video.play();
 }

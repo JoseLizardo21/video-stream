@@ -1,3 +1,4 @@
+
 //show window to create room
 const ctn_create_room = document.getElementById('create-room');
 const btn_room = document.getElementById('btn-room');
@@ -17,11 +18,4 @@ btn_close_popUp[0].addEventListener('click', ()=>{
 });
 btn_close_popUp[1].addEventListener('click', ()=>{
     ctn_enter_room.classList.add('invisible');
-});
-
-
-const btnNewRoom = document.getElementById('btnNewRoom');
-btnNewRoom.addEventListener('click', ()=>{
-    const roomName = document.getElementById('roomName').value;
-    socket.emit('sala', roomName);
 });

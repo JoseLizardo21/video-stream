@@ -41,7 +41,8 @@
             </div>
             <div class="card-body pt-1">
                 <form action="/join" method="POST">
-                    <input type="text" name="name-room" class="form-control" placeholder="Nombre de la sala">
+                    <input type="text" name="name-room" class="form-control" placeholder="Nombre de la sala" required>
+                    <input type="text" name="Username" class="form-control mt-2" placeholder="Nombre de usuario" required>
                     <div class="row">
                         <button class="btn btn-success mt-4 w-50 mx-auto">Unirme</button>
                     </div>
@@ -50,4 +51,4 @@
         </div>
     </div>
 </div>
-<script src="scripts/mainScript.js"></script>
+<script src="/scripts/mainScript.js"></script>
